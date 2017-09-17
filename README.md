@@ -1,28 +1,25 @@
-# Imoocstock
+#慕课网Angular 4.0从入门到实战 打造股票管理网站
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.1.
+## 1. 创建项目  
+ `ng new imoocstock --routing --skip-install`
 
-## Development server
+## 2. 安装第三方依赖包
+`npm install`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 3. 安装 admin-lte,bootstrap,font-awesome,ionicons,jquery
+Via NPM   `npm install admin-lte --save`
 
-## Code scaffolding
+Via gitHub 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`git clone https://github.com/YOUR_USERNAME/AdminLTE.git`
 
-## Build
+文档
+`https://adminlte.io/docs/2.4/layout`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## 4. 复制主页body中的代码到app.component.html中。
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
