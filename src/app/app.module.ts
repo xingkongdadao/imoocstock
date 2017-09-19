@@ -10,6 +10,8 @@ import { MenuComponent } from './menu/menu.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StarsComponent } from './stars/stars.component';
 import { StockManageComponent } from './stock/stock-manage/stock-manage.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StockFormComponent } from './stock/stock-form/stock-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { StockManageComponent } from './stock/stock-manage/stock-manage.componen
     MenuComponent,
     SidebarComponent,
     StarsComponent,
-    StockManageComponent
+    StockManageComponent,
+    DashboardComponent,
+    StockFormComponent
   ],
   imports: [
     BrowserModule,
