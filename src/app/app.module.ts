@@ -13,6 +13,7 @@ import { StockManageComponent } from './stock/stock-manage/stock-manage.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StockFormComponent } from './stock/stock-form/stock-form.component';
 import {StockService} from "./services/stock.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {StockService} from "./services/stock.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]
