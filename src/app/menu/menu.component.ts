@@ -15,7 +15,9 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.menus = [
       new Menu(1, '首页', 'dashboard'),
-      new Menu(2, '股票管理', 'stock')
+      new Menu(2, '股票管理', 'stock'),
+      new Menu(3, '谷歌地图', 'googleMap')
+
     ];
     this.currentMenuId = this.menus[0].id;
 
