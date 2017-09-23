@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { StockFilterPipe } from './pipe/stock-filter.pipe';
 import { GooglemapComponent } from './googlemap/googlemap.component';
 import {HttpModule} from "@angular/http";
+import {SocketService} from "./services/socket.service";
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import {HttpModule} from "@angular/http";
     FormsModule,
     HttpModule
   ],
-  providers: [StockService],
+  providers: [StockService,SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
