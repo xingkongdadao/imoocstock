@@ -21,7 +21,7 @@ export class StockFormComponent implements OnInit {
 
   ngOnInit() {
     let stockId = this.routInfo.snapshot.params['id'];
-    this.stock = this.stockService.getStock(stockId);
+    this.stockService.getStock(stockId);
 
     let fb = new FormBuilder();
     this.formModel = fb.group(

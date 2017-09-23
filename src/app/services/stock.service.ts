@@ -1,32 +1,21 @@
 import { Injectable } from '@angular/core';
 import {Stock} from "../modules/stock";
+import {Observable} from "rxjs";
+import {Http} from "@angular/http";
 
 @Injectable()
 export class StockService {
 
-  constructor() { }
+  constructor(public http: Http) {
 
+  }
 
-    public stocks: Stock[] = [
-      new Stock(1, "第一支股票",1.99, 3.5, "这是第一只股票，是我在学习慕课网", ["IT", "互联网", "金融"]),
-      new Stock(2, "第二支股票",1.99, 4.5, "这是第一只股票，是我在学习慕课网", ["IT", "互联网"]),
-      new Stock(3, "第三支股票",1.99, 2.5, "这是第一只股票，是我在学习慕课网", ["IT"]),
-      new Stock(4, "第四支股票",1.99, 1.5, "这是第一只股票，是我在学习慕课网", ["IT", "互联网"])
-
-    ]
-
-
-    getStocks():Stock[] {
-
-      return this.stocks;
+    getStocks(): Observable<Stock[]> {
+      return this.http.get('/api/stocks').map(res => res.json() );
     }
 
-    getStock(id:number): Stock {
-      var stock = this.stocks.find(stock => stock.id == id);
-      if (!stock) {
-        stock = new Stock(0, "0",0, 0, "", [])
-      }
-      return stock;
+    getStock(id:number): Observable<Stock> {
+      return this.http.get('/api/stocks/' + id).map(res => res.json() );
     }
   }
 

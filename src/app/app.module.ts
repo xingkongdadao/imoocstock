@@ -16,6 +16,7 @@ import {StockService} from "./services/stock.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { StockFilterPipe } from './pipe/stock-filter.pipe';
 import { GooglemapComponent } from './googlemap/googlemap.component';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { GooglemapComponent } from './googlemap/googlemap.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [StockService],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@
         <th>股票评级</th>
         <th>操作</th>
       </tr>
-      <tr *ngFor="let stock of stocks | stockFilter: 'name':keyWord; let i = index;">
+      <tr *ngFor="let stock of stocks |async | stockFilter: 'name':keyWord; let i = index;">
         <td>{{i + 1}}.</td>
         <td>{{stock.name}}</td>
         <td>{{stock.price}}</td>
