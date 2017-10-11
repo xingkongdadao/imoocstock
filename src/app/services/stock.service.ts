@@ -11,11 +11,11 @@ export class StockService {
   }
 
     getStocks(): Observable<Stock[]> {
-      return this.http.get('/api/stocks').map(res => res.json() );
+      return this.http.get('api3/stocks').map(res => res.json() );
     }
 
     getStock(id:number): Observable<Stock> {
-      return this.http.get('/api/stocks/' + id).map(res => res.json() );
+      return this.http.get('/api3/stocks/' + id).map(res => res.json() );
     }
   }
 

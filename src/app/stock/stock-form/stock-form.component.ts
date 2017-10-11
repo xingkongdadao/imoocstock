@@ -3,6 +3,7 @@ import {Stock} from "../../modules/stock";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StockService} from "../../services/stock.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {StockdatabaseService} from "../../services/stockdatabase.service";
 
 @Component({
   selector: 'app-stock-form',
@@ -13,10 +14,11 @@ export class StockFormComponent implements OnInit {
   formModel: FormGroup;
   public stock: Stock = new Stock(0, "", 0, 0, "", []);
   public categories = ["IT", "互联网", "金融"];
+  public add_stock :Stock;
 
   constructor(
     private routInfo: ActivatedRoute,
-    private stockService: StockService,
+    private stockService: StockdatabaseService,
     private router: Router) { }
 
   ngOnInit() {
@@ -60,7 +62,7 @@ export class StockFormComponent implements OnInit {
     this.router.navigateByUrl('/stock');
   }
 
-  save() {
+  updatestock() {
     let chineseCategories = [];
     let index = 0;
     for (let i = 0; i < 3; i++) {
@@ -72,7 +74,39 @@ export class StockFormComponent implements OnInit {
     this.formModel.value.categories = chineseCategories;
     this.formModel.value.rating = this.stock.rating;
     console.log(this.formModel.value);
+    //提交服务器
+    this.add_stock = this.formModel.value;
+    if(!this.formModel.value) {return;}
+
+    this.stockService.postStock(this.add_stock)
+      .subscribe(
+      );
+
     this.router.navigateByUrl('/stock');
   }
 
+
+  addstock() {
+    let chineseCategories = [];
+    let index = 0;
+    for (let i = 0; i < 3; i++) {
+      if (this.formModel.value.categories[i]) {
+        chineseCategories[index++] = this.categories[i];
+      }
+    }
+
+    this.formModel.value.categories = chineseCategories;
+    this.formModel.value.rating = this.stock.rating;
+    console.log(this.formModel.value);
+    //提交服务器
+    this.add_stock = this.formModel.value;
+    if(!this.formModel.value) {return;}
+
+    this.stockService.postStock(this.add_stock)
+      .subscribe(
+
+      );
+
+    this.router.navigateByUrl('/stock');
+  }
 }

@@ -18,6 +18,8 @@ import { StockFilterPipe } from './pipe/stock-filter.pipe';
 import { GooglemapComponent } from './googlemap/googlemap.component';
 import {HttpModule} from "@angular/http";
 import {SocketService} from "./services/socket.service";
+import {StockdatabaseService} from "./services/stockdatabase.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -39,9 +41,10 @@ import {SocketService} from "./services/socket.service";
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [StockService,SocketService],
+  providers: [StockService,SocketService, StockdatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
